@@ -11,18 +11,18 @@
 
 % Define frequency range, centered frequency at 4 KHz and convert it to rad/sec
 f = 100:100:100000;
-f0 = 4000;
-W0 = 2 * pi * f0;
+fc = 4000;
+wc = 2 * pi * fc;
 
 % Define bandwidth and convert it to rad/sec
 fbw = 2000;
 Bw = 2 * pi * fbw;
 
 % Calculate numerator, denominator of band-pass filter
-[an, bn] = lp2bp(a, b, W0, Bw);
+[an, bn] = lp2bp(a, b, wc, Bw);
 
-% Calculate magnited of the transfer function of the band-pass filter and plot it
-Gs = freqs(bn, an, 2 * pi * f);
+% Calculate magnitude of the transfer function of the band-pass filter and plot it
+Gs = freqs(an, bn, 2 * pi * f);
 semilogx(f, abs(Gs));
 grid;
 hold on;
