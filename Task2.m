@@ -20,7 +20,7 @@ wc = 2 * pi * fc;
 [an, bn] = lp2lp(a, b, wc);
 
 % Calculate transfer function of the filter and plot it
-Gs = freqs(bn, an, w);
+Gs = freqs(an, bn, w);
 semilogx(w, abs(Gs));
 grid;
 hold on;
