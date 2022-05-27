@@ -18,6 +18,6 @@ Gs = freqs(bn, an, w);
 semilogx(w, abs(Gs));
 grid;
 hold on;
-xlabel('Radian Frequency (rad/sec)'),
-ylabel('Magnitude of Transfer Function'),
-title('Frequency respone plot for 3-pole Butterworth low-pass filter')
+xlabel('Radian Frequency (rad/sec)');
+ylabel('Magnitude of Transfer Function');
+title('Frequency respone plot for 3-pole Butterworth low-pass filter');
