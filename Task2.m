@@ -4,16 +4,21 @@
 
 % Design 3-pole Butterworth low-pass filter
 [x, y, z] = buttap(3);
+
 % Calculate numerator, denominator coefficients of the filter
 [a, b] = zp2tf(x, y, z);
+
 % Define frequency range and convert it to rad/sec
 f = 1000:1500 / 50:10000;
 w = 2 * pi * f;
+
 % Define cutoff frequency and convert it to rad/sec
 fc = 2000;
 wc = 2 * pi * fc;
+
 % Calculate numerator, denominator of the filter
 [an, bn] = lp2lp(a, b, wc);
+
 % Calculate transfer function of the filter and plot it
 Gs = freqs(bn, an, w);
 semilogx(w, abs(Gs));
