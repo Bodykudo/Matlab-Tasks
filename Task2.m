@@ -2,6 +2,7 @@
 % of a third-order Butterworth low-pass filter with cutoff frequency fc =
 % 2KHz. Then, plot its frequency response. Print your code, results and figures.
 
+% Design 3-pole Butterworth low-pass filter
 [x, y, z] = buttap(3);
 % Calculate numerator, denominator coefficients of the filter
 [a, b] = zp2tf(x, y, z);
