@@ -19,7 +19,7 @@ wc = 2 * pi * fc;
 % Calculate numerator, denominator of the filter
 [an, bn] = lp2lp(a, b, wc);
 
-% Calculate transfer function of the filter and plot it
+% Calculate magnitude of the transfer function of the filter and plot it
 Gs = freqs(an, bn, w);
 semilogx(w, abs(Gs));
 grid;
